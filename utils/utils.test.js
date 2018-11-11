@@ -42,3 +42,18 @@ it('should set firstNAme and lastName',() =>{
         firstName: 'Taras'
     });
 });
+
+
+it('should async add two  number', (done) => {
+    utils.asyncAdd(4,3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+});
+
+it('should async square a number', (done) => {
+    utils.asyncSquare(4, (square) => {
+        expect(square).toBe(16).toBeA('number');
+        done();
+    });
+})

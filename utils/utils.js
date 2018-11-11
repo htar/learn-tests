@@ -2,9 +2,22 @@ module.exports.add = (a, b) => a + b;
 
 module.exports.square = (x) => x * x;
 
-module.exports.setName = (user,fullName) => {
+module.exports.setName = (user, fullName) => {
     let names = fullName.split(' ');
     user.firstName = names[0];
     user.lastName = names[1];
     return user;
 };
+
+
+module.exports.asyncAdd = (a, b, next) => {
+    setTimeout(() => {
+        next((a + b));
+    },1000);
+}
+
+module.exports.asyncSquare = (x, callback) => {
+    setTimeout(() => {
+        callback(x * x);
+    },1000);
+}
